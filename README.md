@@ -1,23 +1,23 @@
-坦克大战
-# 一、前言：
+# 坦克大战
+## 一、前言：
 整个坦克大战游戏做的比较匆忙的，里面也有很多的bug，代码也写得比较乱，整理博客的时候也不太好整理，本想优化一下下，可是由于整个项目结构的缘故，只能到这一步了，这次算是有了很多的经验，相信下次再做的时候，应该会好得多。
 
-# 二、主体介绍
+## 二、主体介绍
 游戏结构主要有游戏面板、设置面板、菜单栏、坦克、子弹以及提升属性的物品
 
-## 玩法规则
+### 玩法规则
 1. 我方坦克将敌方坦克打完，就算获胜
 2. 敌方坦克将我方坦克击败三次以及基地被摧毁，就算失败
 3. 打掉草地以及击败敌方坦克均会掉落物品，捡到后能提升属性值
 
-# 三、代码实现
+## 三、代码实现
 
-<img src="picture/1.jpg" width="50%" height="50"/>
+<img src="picture/1.jpg" width="50%" height="50%"/>
 
-一、游戏面板
+### 游戏面板
 1. 游戏的开始面板将背景的图片，以及文字信息放了上去。这里由于出现了双缓冲技术，就在这里简单地说一下。
 
-## “双缓冲技术”的绘图过程如下
+#### “双缓冲技术”的绘图过程如下
 1. 在内存中创建与画布一致的缓冲区
 
 2. 在缓冲区画图
@@ -94,7 +94,7 @@ public void mousegCliked(MouseEvent e){
 然后如果是点击游戏设置，那么就直接将该面板设置为可见
 
 
-二、游戏设置窗口
+### 游戏设置窗口
 
 <img src="picture/2.jpg" width="50%" height="50%"/>
 
@@ -125,7 +125,7 @@ jTextField.setEditable(true);  //设置文本不可更改
 jDialog.setModalityType(ModalityType.APPLICATION_MODAL);  //设置该窗口打开后将其它窗口锁住
 ```
 
-三、坦克大战的主面板
+### 坦克大战的主面板
 
 <img src="picture/3.jpg" width="50%" height="50%"/>
 <img src="picture/5.jpg" width="50%" height="50%"/>
@@ -152,7 +152,7 @@ startTime = System.currentTimeMillis();
 setEnd.endTime = System.currentTimeMillis();
 setEnd.time = setEnd.endTime - setEnd.startTime;
 
-四、菜单
+### 菜单
 
 <img src="picture/4.jpg" width="50%" height="50%"/>
 
@@ -173,7 +173,7 @@ setEnd.time = setEnd.endTime - setEnd.startTime;
 5. 退出游戏
 System.exit(0);
 
-五、坦克设置
+## 坦克设置
 1. 坦克的属性有坐标、方向、速度、是否存活、生命值、攻击力等
 这里速度可以直接设置坐标的改变量，然后也可以设置执行线程的时间，线程中有sleep()方法和坦克坐标移动的方法，避免由于线程执行太快而设置了线程暂停的时间，将时间缩短也可以提高速度
 
@@ -198,7 +198,7 @@ Random random = new Random();
 int n = random.nextInt(4);   //随机数[0,3)
 ```
 
-六、图片的插入
+## 图片的插入
 这里使用了GameUtil类，使用这个类比较容易添加图片
 
 ```java
