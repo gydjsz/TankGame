@@ -1,6 +1,4 @@
----
-title: 坦克大战
----
+坦克大战
 # 一、前言：
 整个坦克大战游戏做的比较匆忙的，里面也有很多的bug，代码也写得比较乱，整理博客的时候也不太好整理，本想优化一下下，可是由于整个项目结构的缘故，只能到这一步了，这次算是有了很多的经验，相信下次再做的时候，应该会好得多。
 
@@ -13,7 +11,9 @@ title: 坦克大战
 3. 打掉草地以及击败敌方坦克均会掉落物品，捡到后能提升属性值
 
 # 三、代码实现
-![](picture/1.jpg)
+
+<img src="picture/1.jpg" width="50%" height="50"/>
+
 一、游戏面板
 1. 游戏的开始面板将背景的图片，以及文字信息放了上去。这里由于出现了双缓冲技术，就在这里简单地说一下。
 
@@ -95,7 +95,9 @@ public void mousegCliked(MouseEvent e){
 
 
 二、游戏设置窗口
-![](picture/2.jpg)
+
+<img src="picture/2.jpg" width="50%" height="50%"/>
+
 里面使用几个组件：
 1. JLabel: 标签
 2. JRadioButton: 单选按钮
@@ -124,8 +126,10 @@ jDialog.setModalityType(ModalityType.APPLICATION_MODAL);  //设置该窗口打�
 ```
 
 三、坦克大战的主面板
-![](picture/3.jpg)
-![](picture/5.jpg)
+
+<img src="picture/3.jpg" width="50%" height="50%"/>
+<img src="picture/5.jpg" width="50%" height="50%"/>
+
 1. 这个是游戏的主体，包含地图的绘制、显示所有坦克的移动和子弹发射的轨迹、物品掉落、游戏信息面板，坦克死亡、基地破坏的判定;
 2. 由于所有的地图、坦克、子弹都已经放在了各自的ArrayList容器之中，所以在paint方法之中就只需遍历容器中的每一个值，然后将里面的内容绘制在屏幕上。
 
@@ -149,7 +153,9 @@ setEnd.endTime = System.currentTimeMillis();
 setEnd.time = setEnd.endTime - setEnd.startTime;
 
 四、菜单
-![](picture/4.jpg)
+
+<img src="picture/4.jpg" width="50%" height="50%"/>
+
 功能: 回到主面板、重新开始游戏、暂停游戏、恢复、退出游戏
 
 1. 回到主面板
